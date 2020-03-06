@@ -36,3 +36,7 @@
 .bottombar {
   height: 95px;
 }
+
+.ultra {
+  border-radius: 30px;
+}
