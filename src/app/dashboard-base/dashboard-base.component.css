@@ -1,0 +1,38 @@
+.grid-container {
+  margin: 0px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.pink {
+  color: #f76f90;
+}
+
+.footer,
+.push {
+  height: 100px;
+}
+
+.bottomLine {
+  height: 5px;
+}
+
+.bottombar {
+  height: 95px;
+}
