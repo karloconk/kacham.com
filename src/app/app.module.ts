@@ -19,6 +19,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { FooterComponent } from './footer/footer.component';
+import { SinglegameComponent } from './singlegame/singlegame.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { FooterComponent } from './footer/footer.component';
     DashboardBaseComponent,
     AboutUsComponent,
     PrivacyComponent,
-    FooterComponent
+    FooterComponent,
+    SinglegameComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

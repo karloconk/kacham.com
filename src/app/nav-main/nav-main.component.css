@@ -13,7 +13,7 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 
@@ -22,13 +22,16 @@
   left: 0;
   top: 0;
   width: 100%;
+  min-height: 80px;
 }
 
 .title-center {
-  margin: 0 auto;
   color: white;
 }
 
+.buttonss {
+  margin-right: 10%;
+}   
 
 .example-container {
   display: flex;
@@ -41,13 +44,12 @@
 }
 
 .example-is-mobile .example-toolbar {
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
+ /* position: fixed;
+  */
 }
 
 h1.example-app-name {
-  margin-left: 8px;
+  margin-left: 10px;
 }
 
 .example-sidenav-container {
@@ -66,6 +68,20 @@ h1.example-app-name {
   max-width: 100%;
 }
 
-.topbar {
-  height: 80px;
+.smallImg {
+  height: 48px;
+  width:  48px;
+}
+
+.buttonLeft {
+  margin-left: 10%;
+  margin-right: 10px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+} 
+
+.tooltip-cute {
+  background: #fd9bb3;
 }
