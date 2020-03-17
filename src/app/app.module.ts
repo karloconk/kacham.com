@@ -22,7 +22,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SinglegameComponent } from './singlegame/singlegame.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
+import { CookiesNoticeComponent } from './cookies-notice/cookies-notice.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PrivacyComponent,
     FooterComponent,
     SinglegameComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    CookiesNoticeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     MatCardModule,
     MatMenuModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

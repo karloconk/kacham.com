@@ -2,7 +2,7 @@
 
   <mat-toolbar color="primary" class="example-toolbar topbar" [class.mat-elevation-z6]="true">
     <span class="buttonLeft">
-      <button mat-icon-button  (click)="goHome()">
+      <button mat-icon-button (click)="goHome()">
         <img src="./../../assets/logopinkb.png" class="smallImg">
       </button>
     </span>
@@ -15,8 +15,14 @@
       </button>
     </span>
   </mat-toolbar>
-  <router-outlet (activate)="onActivate($event)"></router-outlet>
-  <footer class="footer">
-    <app-footer></app-footer>
-  </footer>
+  <div class="wrapper">
+
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+
+    <div class="push"></div>
+
+    <footer class="footer">
+      <app-footer></app-footer>
+    </footer>
+  </div>
 </div>

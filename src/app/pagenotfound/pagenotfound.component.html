@@ -1,1 +1,21 @@
-<p>pagenotfound works!</p>
+<div class="acoolContainer">
+  <mat-card class="separatorNull" [class.mat-elevation-z0]="true">
+    <mat-card-content>
+      <h1 class="veryBigText">
+        404
+      </h1>
+      <h1 class="BigText">
+        No encontrado
+      </h1>
+      <h3>
+        Parece que eso no funcionó y no sabemos que estabas buscando,
+      </h3>
+      <h3>
+        pero puedes hacer click aquí y regresar a casa
+      </h3>
+      <button mat-fab class="bigButton" (click)="goHome()">
+        <mat-icon class="bigButtonIcon">home</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
