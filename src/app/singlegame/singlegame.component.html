@@ -1,1 +1,39 @@
-<p>singlegame works!</p>
+<div [ngClass]="mobileOn ? 'miliBig' : 'minusMili'">
+  <br>
+  <br>
+  <div class="grid-container">
+
+    <mat-grid-list cols="2" rowHeight="350px" gutterSize="100px">
+      <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <mat-card class="dashboard-card " [ngClass]="nightMode ? 'mat-cardd2' : 'mat-cardd'"
+          [class.mat-elevation-z10]="true">
+          <mat-card-content class="dashboard-card-content">
+            <table>
+              <tr *ngIf="!mobileOn">
+                <td class="tdl">
+                  <img src={{appimg}} class="ultram">
+                </td>
+                <td class="tdr">
+                  <div *ngIf="!nightMode">
+                    <p class="ultraBig2">
+                      {{appTitle}}
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 mat-dialog-title class="whitetext">
+                      {{appSub}}
+                    </h1>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+<img src={{bImage}} class="bimage">

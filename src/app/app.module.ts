@@ -25,6 +25,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CookiesNoticeComponent } from './cookies-notice/cookies-notice.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatMenuModule,
     MatTabsModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

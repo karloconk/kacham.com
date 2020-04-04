@@ -1,3 +1,10 @@
+.bimage {
+  width:  100%;
+  z-index: -1;
+  position: fixed;
+  bottom: 0px;
+}
+
 .grid-container {
   margin: 0px;
 }
@@ -34,4 +41,86 @@
 
 .ultra {
   border-radius: 30px;
+  height:        200px;
 }
+
+.ultra2 {
+  border-radius: 30px;
+  height:        200px;
+  margin-top:    40px;
+}
+
+.mat-cardd{
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.mat-cardd2{
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.emptycard{
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  height: 290px;
+}
+
+.tdl {
+  width: 40%;
+}
+
+.tdlarge {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+.tdr {
+  width: 60%;
+}
+
+.minusMili {
+  margin-left:  22.5%;
+  margin-right: 22.5%;
+}
+
+.miliBig {
+  margin-left:  5%;
+  margin-right: 5%;
+}
+
+.innercard {
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.55);
+  margin-right: 50px;
+}
+
+.innercard2 {
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.55);
+  margin-right: 50px;
+}
+
+.ultraBig {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.whitetext {
+  color: white;
+}
+
+.ultraBig2 {
+  font-size: 35px;
+  color: white;
+}
+

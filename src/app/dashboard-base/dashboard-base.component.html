@@ -1,48 +1,133 @@
-<div class="grid-container" >
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card class="dashboard-card"  [class.mat-elevation-z0] = "true">
-        <mat-card-header> 
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <img src="./../../assets/kachamlogo.png" height="200" width="180">
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card"  [class.mat-elevation-z0] = "true">
-        <mat-card-header> 
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <img src="./../../assets/iconoApp.png" height="200" class="ultra">
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card"  [class.mat-elevation-z0] = "true">
-        <mat-card-header> 
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-            <img src="./../../assets/iconoApp.png" height="200" class="ultra">
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card class="dashboard-card"  [class.mat-elevation-z0] = "true">
-        <mat-card-header> 
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div [ngClass]="mobileOn ? 'miliBig' : 'minusMili'">
+  <div class="grid-container">
+    <mat-grid-list *ngIf="!mobileOn; else smalliconMobile" cols="2" rowHeight="350px">
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-card class="dashboard-card emptycard" [class.mat-elevation-z0]="true">
+          <mat-card-header>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div>
+              <img src="./../../assets/kachamlogo.png" height="200" width="180">
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
 
+    <ng-template #smalliconMobile>
+      <mat-grid-list cols="2" rowHeight="200px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-card class="dashboard-card emptycard" [class.mat-elevation-z0]="true">
+            <mat-card-header>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div>
+                <img src="./../../assets/kachamlogo.png" height="150" width="130">
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </ng-template>
+
+    <div class="grid-container">
+      <mat-grid-list cols="2" rowHeight="350px" gutterSize="100px">
+        <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+          <mat-card class="dashboard-card " [ngClass]="nightMode ? 'mat-cardd2' : 'mat-cardd'"
+            [class.mat-elevation-z10]="true">
+            <mat-card-content class="dashboard-card-content">
+              <table>
+                <tr *ngIf="!mobileOn; else singleappicon">
+                  <td class="tdl">
+
+                    <img *ngIf="card.gnum !== 0; else noAPPImageF" src={{card.image}}
+                      matTooltip="Haz click para ir al juego" (click)="goGame(card.gnum)" class="ultra">
+                    <ng-template #noAPPImageF>
+                      <img src={{card.image}} matTooltip="???" class="ultra">
+                    </ng-template>
+                  </td>
+                  <td class="tdr">
+                    <mat-card *ngIf="card.gnum !== 0; else noAPPCard" [ngClass]="nightMode ? 'innercard2' : 'innercard'"
+                      [class.mat-elevation-z0]="true" matTooltip="Haz click para ir al juego"
+                      (click)="goGame(card.gnum)">
+                      <br>
+
+                      <div *ngIf="nightMode; else lightmode">
+                        <p class="ultraBig2">
+                          {{card.tiitle}}
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 mat-dialog-title class="whitetext">
+                          {{card.text}}
+                        </h1>
+                      </div>
+
+                      <ng-template #lightmode>
+                        <p class="ultraBig" [ngStyle]="{'color' : card.colour}">
+                          {{card.tiitle}}
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 mat-dialog-title>
+                          {{card.text}}
+                        </h1>
+                      </ng-template>
+
+                    </mat-card>
+                    <ng-template #noAPPCard>
+                      <mat-card [ngClass]="nightMode ? 'innercard2' : 'innercard'" [class.mat-elevation-z0]="true"
+                        matTooltip="???">
+                        <br>
+                        <div *ngIf="nightMode; else lightmode">
+                          <p class="ultraBig2">
+                            {{card.tiitle}}
+                          </p>
+                          <br>
+                          <br>
+                          <br>
+                          <h1 mat-dialog-title class="whitetext">
+                            {{card.text}}
+                          </h1>
+                        </div>
+
+                        <ng-template #lightmode>
+                          <p class="ultraBig" [ngStyle]="{'color' : card.colour}">
+                            {{card.tiitle}}
+                          </p>
+                          <br>
+                          <br>
+                          <br>
+                          <h1 mat-dialog-title>
+                            {{card.text}}
+                          </h1>
+                        </ng-template>
+
+                      </mat-card>
+                    </ng-template>
+                  </td>
+                </tr>
+                <ng-template #singleappicon>
+                  <td class="tdlarge">
+
+                    <img *ngIf="card.gnum !== 0; else noAPPImage" src={{card.image}} matTooltip="Toca para ir al juego"
+                      (click)="goGame(card.gnum)" class="ultra2">
+                    <ng-template #noAPPImage>
+                      <img src={{card.image}} matTooltip="???" class="ultra2">
+                    </ng-template>
+                  </td>
+                </ng-template>
+              </table>
+              <div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
 </div>
+<img src={{bImage}} class="bimage">

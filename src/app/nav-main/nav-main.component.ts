@@ -2,7 +2,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnInit, OnDestroy, ElementRef, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, AfterViewInit, OnDestroy, ElementRef, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 import { CookiesNoticeComponent } from '../cookies-notice/cookies-notice.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -16,7 +16,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 
 export class NavMainComponent {
   mobileQuery: MediaQueryList;
-  isTrue = true;
+  isTrue    = true;
+  nightMode = false;
+  isHome    = false;
 
   private _mobileQueryListener: () => void;
 
@@ -35,8 +37,13 @@ export class NavMainComponent {
   }
 
   ngOnInit() {
-    console.log(this.router.url);
+    let d = new Date();
+    if (d.getHours() >= 19) {
+      this.nightMode = true;
+    }
   }
+
+  ngAfterViewInit(){ }
 
   goAboutUs() {
     this.router.navigate(['/aboutUs']);
@@ -60,5 +67,6 @@ export class NavMainComponent {
   onActivate(event) {
     window.scroll(0, 0);
   }
+
 
 }

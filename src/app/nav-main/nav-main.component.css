@@ -30,7 +30,7 @@
 
 .buttonss {
   margin-right: 10%;
-}   
+}
 
 .example-container {
   display: flex;
@@ -79,8 +79,15 @@ h1.example-app-name {
 
 .example-spacer {
   flex: 1 1 auto;
-} 
+}
 
 .tooltip-cute {
   background: #fd9bb3;
+}
+
+.bimage {
+  width:  100%;
+  z-index: -1;
+  position: fixed;
+  bottom: 0px;
 }
