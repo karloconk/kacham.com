@@ -3,30 +3,162 @@
   <br>
   <div class="grid-container">
 
-    <mat-grid-list cols="2" rowHeight="350px" gutterSize="100px">
+    <mat-grid-list cols="2" rowHeight={{teibunrow}} gutterSize="100px">
       <mat-grid-tile [colspan]="2" [rowspan]="2">
         <mat-card class="dashboard-card " [ngClass]="nightMode ? 'mat-cardd2' : 'mat-cardd'"
           [class.mat-elevation-z10]="true">
           <mat-card-content class="dashboard-card-content">
-            <table>
-              <tr *ngIf="!mobileOn">
+            <table class="adaa">
+              <tr *ngIf="!mobileOn; else yesmobile">
                 <td class="tdl">
-                  <img src={{appimg}} class="ultram">
-                </td>
-                <td class="tdr">
-                  <div *ngIf="!nightMode">
-                    <p class="ultraBig2">
-                      {{appTitle}}
-                    </p>
-                    <br>
-                    <br>
-                    <br>
-                    <h1 mat-dialog-title class="whitetext">
-                      {{appSub}}
-                    </h1>
+                  <div id="carouselExampleIndicators" class="carousel slide ultram" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner paddingsUltra">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src={{appimg}} alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src={{appimg}} alt="Second slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src={{appimg}} alt="Third slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </div>
                 </td>
+                <td class="tdr">
+                  <mat-card [ngClass]="nightMode ? 'innercard2' : 'innercard'" [class.mat-elevation-z0]="true">
+                    <br>
+
+                    <div *ngIf="nightMode; else lightmode">
+                      <br>
+
+                      <p class="ultraBig2">
+                        {{appTitle}}
+                      </p>
+                      <br>
+                      <br>
+                      <br>
+                      <h1 mat-dialog-title class="whitetext">
+                        {{appSub}}
+                      </h1>
+                      <br>
+                      <h2 mat-dialog-title class="whitetext">
+                        {{appdesc}}
+                      </h2>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      <div *ngIf="availableGoogle">
+                        <img src="./../../assets/playstore.svg" height="80" width="220" />
+                      </div>
+                    </div>
+
+                    <ng-template #lightmode>
+                      <br>
+                      <br>
+                      <p class="ultraBig" [ngStyle]="{'color' : backgColor}">
+                        {{appTitle}}
+                      </p>
+                      <br>
+                      <br>
+                      <br>
+                      <h1 mat-dialog-title>
+                        {{appSub}}
+                      </h1>
+                      <br>
+
+                      <h2 mat-dialog-title>
+                        {{appdesc}}
+                      </h2>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      <div *ngIf="availableGoogle">
+                        <img src="./../../assets/playstore.svg" height="80" width="220" />
+                      </div>
+                    </ng-template>
+                  </mat-card>
+
+                </td>
               </tr>
+              <ng-template #yesmobile>
+                <tr height="100%">
+                  <td >
+                      <br>
+
+                      <div *ngIf="nightMode; else lightmode">
+                        <img src={{appico}} class="ultra">
+                        <br>
+                        <br>
+                        <p class="ultraBig2">
+                          {{appTitle}}
+                        </p>
+                        <br>
+                        <br>
+                        <h1 mat-dialog-title class="whitetext">
+                          {{appSub}}
+                        </h1>
+                        <br>
+                        <h2 mat-dialog-title class="whitetext">
+                          {{appdesc}}
+                        </h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                        <div *ngIf="availableGoogle">
+                          <img src="./../../assets/playstore.svg" height="80" width="220" />
+                          <br>
+                        </div>
+                      </div>
+
+                      <ng-template #lightmode>
+                        <br>
+                        <br>
+                        <p class="ultraBig" [ngStyle]="{'color' : backgColor}">
+                          {{appTitle}}
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 mat-dialog-title>
+                          {{appSub}}
+                        </h1>
+                        <br>
+
+                        <h2 mat-dialog-title class="appdesccs">
+                          {{appdesc}}
+                        </h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                        <div *ngIf="availableGoogle">
+                          <img src="./../../assets/playstore.svg" height="80" width="220" />
+                        </div>
+                      </ng-template>
+                  </td>
+                </tr>
+              </ng-template>
             </table>
             <div>
             </div>

@@ -16,22 +16,32 @@ export class SinglegameComponent implements OnInit {
   appSub   = "";
   appdesc  = "";
   appimg   = "";
+  appico   = "";
   backgColor = "#ffffff"
+  availableApple  = false;
+  availableGoogle = false;
+  teibunrow = "350px";
 
   apps =  [ {
     name:        "?",
     subtitle:    "",
     description: "",
     appimage:    "",
+    appicon:    "",
     background:  "",
-    bcolor:      ""
+    bcolor:      "",
+    apple:       false,
+    google:      false
   },  {
       name:        "Galleta de la suerte",
       subtitle:    "¿Listo para saber tu suerte?",
       description: "Con la app de la suerte para iOS, podrás conocer tu suerte en cualquier momento.\nNo te andes a medias, consulta tu suerte con un tap siempre.",
       appimage:    "./../../assets/adad.png",
+      appicon:    "./../../assets/cookieApp.png",
       background:  "./../../assets/fortuneB.png",
-      bcolor:      "#993333"
+      bcolor:      "#993333",
+      apple:       true,
+      google:      false
     }
   ];
 
@@ -48,13 +58,17 @@ export class SinglegameComponent implements OnInit {
 
       this.bImage     = appnow.background;
       this.appimg     = appnow.appimage;
+      this.appico     = appnow.appicon
       this.appTitle   = appnow.name;
       this.appSub     = appnow.subtitle;
       this.appdesc    = appnow.description;
       this.backgColor = appnow.bcolor;
+      this.availableApple  = appnow.apple;
+      this.availableGoogle = appnow.google;
 
       if (window.innerWidth < 1500) {
         this.mobileOn = true
+        this.teibunrow = "380px";
       }
     });
   }
