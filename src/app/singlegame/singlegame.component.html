@@ -11,13 +11,8 @@
             <table class="adaa">
               <tr *ngIf="!mobileOn; else yesmobile">
                 <td class="tdl">
-                  <div id="carouselExampleIndicators" class="carousel slide ultram" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner paddingsUltra">
+                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
                       <div class="carousel-item active">
                         <img class="d-block w-100" src={{appimg}} alt="First slide">
                       </div>
@@ -28,11 +23,11 @@
                         <img class="d-block w-100" src={{appimg}} alt="Third slide">
                       </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>
@@ -87,8 +82,7 @@
                       </h2>
                       <br>
                       <br>
-                      <br>
-                      <br>
+
                       <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
                       <div *ngIf="availableGoogle">
                         <img src="./../../assets/playstore.svg" height="80" width="220" />
@@ -131,6 +125,7 @@
                       </div>
 
                       <ng-template #lightmode>
+                        <img src={{appico}} class="ultra">
                         <br>
                         <br>
                         <p class="ultraBig" [ngStyle]="{'color' : backgColor}">
@@ -149,8 +144,7 @@
                         </h2>
                         <br>
                         <br>
-                        <br>
-                        <br>
+
                         <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
                         <div *ngIf="availableGoogle">
                           <img src="./../../assets/playstore.svg" height="80" width="220" />
