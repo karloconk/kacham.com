@@ -97,7 +97,7 @@
                   <td >
                       <br>
 
-                      <div *ngIf="nightMode; else lightmode">
+                      <div class="lesswi" *ngIf="nightMode; else lightmode">
                         <img src={{appico}} class="ultra">
                         <br>
                         <br>
@@ -125,6 +125,8 @@
                       </div>
 
                       <ng-template #lightmode>
+                        <div class="lesswi">
+
                         <img src={{appico}} class="ultra">
                         <br>
                         <br>
@@ -149,6 +151,8 @@
                         <div *ngIf="availableGoogle">
                           <img src="./../../assets/playstore.svg" height="80" width="220" />
                         </div>
+                      </div>
+
                       </ng-template>
                   </td>
                 </tr>

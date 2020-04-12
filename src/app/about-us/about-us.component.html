@@ -12,10 +12,10 @@
               <br>
               <br>
               <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                Somos un colectivo cuyo fin es
+                Somos un colectivo, y nuesta misión es
               </h1>
               <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                crear experiencias bellas y entretenidas para divertir a la gente.
+                crear experiencias preciosas y entretenidas para divertir a la gente.
               </h1>
             </mat-card>
           </mat-grid-tile>
@@ -43,13 +43,19 @@
                       <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
                         {{card.resumen}}
                       </h1>
+                      <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
+                        {{card.resumen2}}
+                      </h1>
                       <br>
-                      <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                        {{card.red1}}
-                      </h1>
-                      <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                        {{card.red2}}
-                      </h1>
+                      <button mat-icon-button [class.mat-elevation-z0]="true">
+                        <img src="./../../assets/fb.png" height="32"
+                        (click)="openthis(card.red1)">
+                      </button>
+                      <span class="laclas"></span>
+                      <button mat-icon-button [class.mat-elevation-z0]="true">
+                        <img src="./../../assets/insta.png" height="32"
+                        (click)="openthis(card.red2)">
+                      </button>
                     </mat-card>
                   </td>
                 </tr>
@@ -75,12 +81,11 @@
           <mat-grid-tile [colspan]="2" [rowspan]="4">
             <mat-card [ngClass]="nightMode ? 'someCard2' : 'someCard'" [class.mat-elevation-z8]="true">
               <br>
-              <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                Somos un colectivo cuyo fin es
-              </h1>
-              <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                crear experiencias bellas y entretenidas para divertir a la gente.
-              </h1>
+              <div class= "cenetredT">
+                <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
+                  Somos un colectivo, y nuesta misión es crear experiencias preciosas y entretenidas para divertir a la gente.
+                </h1>
+              </div>
             </mat-card>
           </mat-grid-tile>
           <mat-grid-tile *ngFor="let card of cards | async" [colspan]="2" [rowspan]="9">
@@ -102,13 +107,19 @@
                 <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
                   {{card.resumen}}
                 </h1>
+                <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
+                  {{card.resumen2}}
+                </h1>
                 <br>
-                <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                  {{card.red1}}
-                </h1>
-                <h1 mat-dialog-title [ngClass]="nightMode ? 'textuW' : 'textuB'">
-                  {{card.red2}}
-                </h1>
+                <button mat-icon-button [class.mat-elevation-z0]="true">
+                  <img src="./../../assets/fb.png" height="32"
+                  (click)="openthis(card.red1)">
+                </button>
+                <span class="laclas"></span>
+                <button mat-icon-button [class.mat-elevation-z0]="true">
+                  <img src="./../../assets/insta.png" height="32"
+                  (click)="openthis(card.red2)">
+                </button>
               </mat-card>
 
 

@@ -1,13 +1,13 @@
 <div [ngClass]="mobileOn ? 'miliBig' : 'minusMili'">
   <div class="grid-container">
-    <mat-grid-list *ngIf="!mobileOn; else smalliconMobile" cols="2" rowHeight="350px">
+    <mat-grid-list *ngIf="!mobileOn; else smalliconMobile" cols="2" rowHeight="200px">
       <mat-grid-tile [colspan]="2" [rowspan]="1">
         <mat-card class="dashboard-card emptycard" [class.mat-elevation-z0]="true">
           <mat-card-header>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
             <div>
-              <img src="./../../assets/kachamlogo.png" height="200" width="180">
+              <img src="./../../assets/kachamlogo.png" height="150" width="130">
             </div>
           </mat-card-content>
         </mat-card>
@@ -15,14 +15,14 @@
     </mat-grid-list>
 
     <ng-template #smalliconMobile>
-      <mat-grid-list cols="2" rowHeight="200px">
+      <br>
+
+      <mat-grid-list cols="2" rowHeight="150px">
         <mat-grid-tile [colspan]="2" [rowspan]="1">
           <mat-card class="dashboard-card emptycard" [class.mat-elevation-z0]="true">
-            <mat-card-header>
-            </mat-card-header>
             <mat-card-content class="dashboard-card-content">
               <div>
-                <img src="./../../assets/kachamlogo.png" height="150" width="130">
+                <img src="./../../assets/kachamlogo.png" height="100" width="90">
               </div>
             </mat-card-content>
           </mat-card>
@@ -32,7 +32,7 @@
     </ng-template>
 
     <div class="grid-container">
-      <mat-grid-list cols="2" rowHeight="350px" gutterSize="100px">
+      <mat-grid-list cols="2" rowHeight={{therouhaeight}} gutterSize="50px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
           <mat-card class="dashboard-card " [ngClass]="nightMode ? 'mat-cardd2' : 'mat-cardd'"
             [class.mat-elevation-z10]="true">
@@ -110,11 +110,15 @@
                     </ng-template>
                   </td>
                 </tr>
+                <tr *ngIf="mobileOn">
+                  <br>
+                  <p>
+                    {{card.tiitle}}
+                  </p>
+                </tr>
                 <ng-template #singleappicon>
                   <td class="tdlarge">
-
-                    <img *ngIf="card.gnum !== 0; else noAPPImage" src={{card.image}} matTooltip="Toca para ir al juego"
-                      (click)="goGame(card.gnum)" class="ultra2">
+                    <img *ngIf="card.gnum !== 0; else noAPPImage" src={{card.image}}  (click)="goGame(card.gnum)" class="ultra2">
                     <ng-template #noAPPImage>
                       <img src={{card.image}} matTooltip="???" class="ultra2">
                     </ng-template>

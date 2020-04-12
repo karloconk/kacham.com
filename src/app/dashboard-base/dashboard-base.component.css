@@ -46,8 +46,8 @@
 
 .ultra2 {
   border-radius: 30px;
-  height:        200px;
-  margin-top:    40px;
+  height:        100px;
+  margin-top:    10px;
 }
 
 .mat-cardd{
@@ -75,7 +75,7 @@ tr {
 }
 
 .tdlarge {
-  width: 100%;
+  width: 50%;
   align-content: center;
   text-align: center;
 }

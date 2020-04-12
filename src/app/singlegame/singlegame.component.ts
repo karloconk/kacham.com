@@ -66,7 +66,7 @@ export class SinglegameComponent implements OnInit {
       this.availableApple  = appnow.apple;
       this.availableGoogle = appnow.google;
 
-      if (window.innerWidth < 1500) {
+      if (window.innerWidth < 1000) {
         this.mobileOn = true
         this.teibunrow = "380px";
       }

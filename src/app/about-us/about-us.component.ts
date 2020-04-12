@@ -11,13 +11,15 @@ export class AboutUsComponent implements OnInit {
 
   backgColor    = "#f79ab1"
   karlosub      = "Developer";
-  karlores      = "Developer Creador Músico";
-  karlored1     = "twitter: @tiwittermiogg";
-  karlored2     = "fb: @kalavera";
+  karlores      = "Creador";
+  karlores2     = "Músico";
+  karlored1     = "https://www.facebook.com/KaCham-Games-104996357774221";
+  karlored2     = "https://www.facebook.com/KaCham-Games-104996357774221";
   samsub        = "Product designer";
-  samres        = "Ilustradora Diseñadora";
-  samred1       = "twitter: @tiwittermiogg";
-  samred2       = "fb: @samantha";
+  samres        = "Ilustradora";
+  samres2       = "Animadora";
+  samred1       = "https://www.facebook.com/KaCham-Games-104996357774221";
+  samred2       = "https://www.facebook.com/KaCham-Games-104996357774221";
 
   bImage = "./../../assets/fortuneB.png";
   mobileOn = false;
@@ -33,19 +35,21 @@ export class AboutUsComponent implements OnInit {
           rows: 3,
           image:  "./../../assets/cham.png",
           tiitle: "Samantha",
-          subt:    this.samsub,
-          resumen: this.samres,
-          red1:    this.samred1,
-          red2:    this.samred2
+          subt:     this.samsub,
+          resumen:  this.samres,
+          resumen2: this.samres2,
+          red1:     this.samred1,
+          red2:     this.samred2
         }, {
           cols: 1,
           rows: 3,
           image:  "./../../assets/ka.png",
           tiitle: "Karlo",
-          subt:    this.karlosub,
-          resumen: this.karlores,
-          red1:    this.karlored1,
-          red2:    this.karlored2
+          subt:     this.karlosub,
+          resumen:  this.karlores,
+          resumen2: this.karlores2,
+          red1:     this.karlored1,
+          red2:     this.karlored2
         }
       ];
     })
@@ -56,16 +60,20 @@ export class AboutUsComponent implements OnInit {
 
   ngOnInit(): void {
     let d = new Date();
-    if (d.getHours() < 19) {
+    if (d.getHours() > 19) {
       this.nightMode = true;
     }
-    if (window.innerWidth < 1500) {
+    if (window.innerWidth < 1000) {
       this.mobileOn = true
     }
   }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.backgColor;
+  }
+
+  openthis(textom) {
+    window.open(textom)
   }
 
 }

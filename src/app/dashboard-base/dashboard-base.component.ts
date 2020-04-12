@@ -16,7 +16,7 @@ export class DashboardBaseComponent {
   cookieimage = "./../../assets/cookieApp.png";
   cookieColour = "#ff0707";
 
-  comingSoonTitle = "?";
+  comingSoonTitle = "Más apps próximamente";
   comingSoontext = "Próximamente...";
   comingSoonimage = "./../../assets/noApp.png";
   comingSoonColour = "black";
@@ -25,6 +25,8 @@ export class DashboardBaseComponent {
   mobileOn = false;
   nightMode = false;
   bImage = "./../../assets/spring";
+
+  therouhaeight = "350px";
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({
@@ -66,8 +68,9 @@ export class DashboardBaseComponent {
     } else {
       this.bImage += "Day.png"
     }
-    if (window.innerWidth < 1500) {
-      this.mobileOn = true
+    if (window.innerWidth < 1000) {
+      this.mobileOn = true;
+      this.therouhaeight = "220px";
     }
   }
 

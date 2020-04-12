@@ -6,6 +6,10 @@
   width: 200px;
 }
 
+.topbutton {
+  width: 50px;
+}
+
 .sidenav .mat-toolbar {
   background: inherit;
 }
@@ -73,7 +77,7 @@ h1.example-app-name {
 }
 
 .buttonLeft {
-  margin-left: 10%;
+  margin-left: 8%;
   margin-right: 10px;
 }
 
