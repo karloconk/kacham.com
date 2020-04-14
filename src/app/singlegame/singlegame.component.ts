@@ -15,18 +15,20 @@ export class SinglegameComponent implements OnInit {
   appTitle = "";
   appSub   = "";
   appdesc  = "";
-  appimg   = "";
+  appimg   = [];
   appico   = "";
   backgColor = "#ffffff"
   availableApple  = false;
   availableGoogle = false;
   teibunrow = "350px";
 
+  pathcookies = "./../../assets/cookiess/"
+
   apps =  [ {
     name:        "?",
     subtitle:    "",
     description: "",
-    appimage:    "",
+    appimage:    [],
     appicon:    "",
     background:  "",
     bcolor:      "",
@@ -36,9 +38,9 @@ export class SinglegameComponent implements OnInit {
       name:        "Galleta de la suerte",
       subtitle:    "¿Listo para saber tu suerte?",
       description: "Con la app de la suerte para iOS, podrás conocer tu suerte en cualquier momento.\nNo te andes a medias, consulta tu suerte con un tap siempre.",
-      appimage:    "./../../assets/adad.png",
+      appimage:    [ this.pathcookies +"cookie1.png", this.pathcookies +"cookie2.png", this.pathcookies +"cookie3.png", this.pathcookies +"cookie4.png", this.pathcookies +"cookie5.png", this.pathcookies +"cookie6.png", this.pathcookies +"cookie7.png", this.pathcookies +"cookie8.png" ],
       appicon:    "./../../assets/cookieApp.png",
-      background:  "./../../assets/fortuneB.png",
+      background:  "./../../assets/scalableVectorGraphics/fortuneB.svg",
       bcolor:      "#993333",
       apple:       true,
       google:      false

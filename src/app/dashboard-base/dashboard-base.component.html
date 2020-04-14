@@ -7,7 +7,7 @@
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
             <div>
-              <img src="./../../assets/kachamlogo.png" height="150" width="130">
+              <img src="./../../assets/KachamLogo_Blanco.png" height="150" width="130">
             </div>
           </mat-card-content>
         </mat-card>
@@ -22,7 +22,7 @@
           <mat-card class="dashboard-card emptycard" [class.mat-elevation-z0]="true">
             <mat-card-content class="dashboard-card-content">
               <div>
-                <img src="./../../assets/kachamlogo.png" height="100" width="90">
+                <img src="./../../assets/KachamLogo_Blanco.png" height="100" width="90">
               </div>
             </mat-card-content>
           </mat-card>
@@ -112,7 +112,7 @@
                 </tr>
                 <tr *ngIf="mobileOn">
                   <br>
-                  <p>
+                  <p [ngClass]="nightMode ? 'whitetext' : 'blacktext'" >
                     {{card.tiitle}}
                   </p>
                 </tr>

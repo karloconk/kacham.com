@@ -9,19 +9,19 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 })
 export class AboutUsComponent implements OnInit {
 
-  backgColor    = "#f79ab1"
+  bg = '#87d8ee';
   karlosub      = "Developer";
   karlores      = "Creador";
   karlores2     = "Músico";
-  karlored1     = "https://www.facebook.com/KaCham-Games-104996357774221";
-  karlored2     = "https://www.facebook.com/KaCham-Games-104996357774221";
+  karlored1     = "https://twitter.com/808khz";
+  karlored2     = "https://www.facebook.com/Kalavera-325778287570205/";
   samsub        = "Product designer";
   samres        = "Ilustradora";
   samres2       = "Animadora";
-  samred1       = "https://www.facebook.com/KaCham-Games-104996357774221";
-  samred2       = "https://www.facebook.com/KaCham-Games-104996357774221";
+  samred1       = "https://www.instagram.com/benjiless/";
+  samred2       = "https://www.facebook.com/benjiless.art/";
 
-  bImage = "./../../assets/fortuneB.png";
+  bImage = "./../../assets/scalableVectorGraphics/aboutUsDay.svg";
   mobileOn = false;
   nightMode = false;
 
@@ -33,7 +33,7 @@ export class AboutUsComponent implements OnInit {
       return [{
           cols: 1,
           rows: 3,
-          image:  "./../../assets/cham.png",
+          image:  "./../../assets/chamu.png",
           tiitle: "Samantha",
           subt:     this.samsub,
           resumen:  this.samres,
@@ -62,6 +62,7 @@ export class AboutUsComponent implements OnInit {
     let d = new Date();
     if (d.getHours() > 19) {
       this.nightMode = true;
+      this.bImage = "./../../assets/scalableVectorGraphics/aboutUsNight.svg";
     }
     if (window.innerWidth < 1000) {
       this.mobileOn = true
@@ -69,7 +70,11 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.backgColor;
+    if (this.nightMode) {
+      this.bg = "#000066"
+    }
+
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.bg;
   }
 
   openthis(textom) {

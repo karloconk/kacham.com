@@ -24,7 +24,7 @@ export class DashboardBaseComponent {
   bg = '#87d8ee';
   mobileOn = false;
   nightMode = false;
-  bImage = "./../../assets/spring";
+  bImage = "./../../assets/scalableVectorGraphics/spring";
 
   therouhaeight = "350px";
 
@@ -64,9 +64,9 @@ export class DashboardBaseComponent {
     let d = new Date();
     if (d.getHours() > 19) {
       this.nightMode = true;
-      this.bImage += "Night.png"
+      this.bImage += "Night.svg"
     } else {
-      this.bImage += "Day.png"
+      this.bImage += "Day.svg"
     }
     if (window.innerWidth < 1000) {
       this.mobileOn = true;
