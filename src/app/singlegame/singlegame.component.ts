@@ -20,7 +20,7 @@ export class SinglegameComponent implements OnInit {
   backgColor = "#ffffff"
   availableApple  = false;
   availableGoogle = false;
-  teibunrow = "350px";
+  teibunrow = "380px";
 
   pathcookies = "./../../assets/cookiess/"
 
@@ -40,7 +40,7 @@ export class SinglegameComponent implements OnInit {
       description: "Con la app de la suerte para iOS, podrás conocer tu suerte en cualquier momento.\nNo te andes a medias, consulta tu suerte con un tap siempre.",
       appimage:    [ this.pathcookies +"cookie1.png", this.pathcookies +"cookie2.png", this.pathcookies +"cookie3.png", this.pathcookies +"cookie4.png", this.pathcookies +"cookie5.png", this.pathcookies +"cookie6.png", this.pathcookies +"cookie7.png", this.pathcookies +"cookie8.png" ],
       appicon:    "./../../assets/cookieApp.png",
-      background:  "./../../assets/scalableVectorGraphics/fortuneB.svg",
+      background:  "./../../assets/scalableVectorGraphics/fortuneB.jpg",
       bcolor:      "#993333",
       apple:       true,
       google:      false

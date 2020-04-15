@@ -64,9 +64,9 @@ export class DashboardBaseComponent {
     let d = new Date();
     if (d.getHours() > 19) {
       this.nightMode = true;
-      this.bImage += "Night.svg"
+      this.bImage += "Night.jpg"
     } else {
-      this.bImage += "Day.svg"
+      this.bImage += "Day.jpg"
     }
     if (window.innerWidth < 1000) {
       this.mobileOn = true;

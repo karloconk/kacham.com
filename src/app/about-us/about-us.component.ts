@@ -21,7 +21,7 @@ export class AboutUsComponent implements OnInit {
   samred1       = "https://www.instagram.com/benjiless/";
   samred2       = "https://www.facebook.com/benjiless.art/";
 
-  bImage = "./../../assets/scalableVectorGraphics/aboutUsDay.svg";
+  bImage = "./../../assets/scalableVectorGraphics/aboutUsDay.jpg";
   mobileOn = false;
   nightMode = false;
 
@@ -62,7 +62,7 @@ export class AboutUsComponent implements OnInit {
     let d = new Date();
     if (d.getHours() > 19) {
       this.nightMode = true;
-      this.bImage = "./../../assets/scalableVectorGraphics/aboutUsNight.svg";
+      this.bImage = "./../../assets/scalableVectorGraphics/aboutUsNight.jpg";
     }
     if (window.innerWidth < 1000) {
       this.mobileOn = true
