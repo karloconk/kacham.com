@@ -109,6 +109,7 @@ tr {
 .ultraBig {
   font-weight: bold;
   font-size: 35px;
+  line-height: 38px;
 }
 
 h1 {
@@ -126,5 +127,6 @@ h1 {
 .ultraBig2 {
   font-size: 35px;
   color: white;
+  line-height: 38px;
 }
 
