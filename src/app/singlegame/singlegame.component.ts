@@ -20,6 +20,8 @@ export class SinglegameComponent implements OnInit {
   backgColor = "#ffffff"
   availableApple  = false;
   availableGoogle = false;
+  urlApple  = false;
+  urlGoogle = false;
   teibunrow = "380px";
 
   pathcookies = "./../../assets/cookiess/"
@@ -33,17 +35,21 @@ export class SinglegameComponent implements OnInit {
     background:  "",
     bcolor:      "",
     apple:       false,
-    google:      false
+    google:      false,
+    appleURL:       "",
+    googleURL:      ""
   },  {
-      name:        "Galleta de la suerte",
+      name:        "Suertes",
       subtitle:    "¿Listo para saber tu suerte?",
-      description: "Con la app de la suerte para iOS, podrás conocer tu suerte en cualquier momento.\nNo te andes a medias, consulta tu suerte con un tap siempre.",
-      appimage:    [ this.pathcookies +"cookie1.png", this.pathcookies +"cookie2.png", this.pathcookies +"cookie3.png", this.pathcookies +"cookie4.png", this.pathcookies +"cookie5.png", this.pathcookies +"cookie6.png", this.pathcookies +"cookie7.png", this.pathcookies +"cookie8.png" ],
+      description: "Con la app de la suerte, podrás conocer tu suerte en cualquier momento y también relajarte con los divertidos minijuegos",
+      appimage:    [ this.pathcookies +"cookie1.png", this.pathcookies +"cookie2.png", this.pathcookies +"cookie3.png", this.pathcookies +"cookie4.png", this.pathcookies +"cookie5.png", this.pathcookies +"cookie6.png"],
       appicon:    "./../../assets/cookieApp.png",
       background:  "./../../assets/scalableVectorGraphics/fortuneB.jpg",
       bcolor:      "#993333",
       apple:       true,
-      google:      false
+      google:      false,
+      appleURL:       "https://apps.apple.com/mx/app/fortunas/id1501285379?l=en",
+      googleURL:      ""
     }
   ];
 
@@ -58,15 +64,17 @@ export class SinglegameComponent implements OnInit {
         this.nightMode = true;
       }
 
-      this.bImage     = appnow.background;
-      this.appimg     = appnow.appimage;
-      this.appico     = appnow.appicon
-      this.appTitle   = appnow.name;
-      this.appSub     = appnow.subtitle;
-      this.appdesc    = appnow.description;
-      this.backgColor = appnow.bcolor;
+      this.bImage          = appnow.background;
+      this.appimg          = appnow.appimage;
+      this.appico          = appnow.appicon
+      this.appTitle        = appnow.name;
+      this.appSub          = appnow.subtitle;
+      this.appdesc         = appnow.description;
+      this.backgColor      = appnow.bcolor;
       this.availableApple  = appnow.apple;
       this.availableGoogle = appnow.google;
+      this.urlApple        = appnow.appleURL
+      this.urlGoogle       = appnow.googleURL
 
       if (window.innerWidth < 1000) {
         this.mobileOn = true

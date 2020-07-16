@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class DashboardBaseComponent {
 
-  cookietitle = "Galleta de la suerte";
+  cookietitle = "Suertes";
   cookietext = "App de la suerte para iOS";
   cookieimage = "./../../assets/cookieApp.png";
   cookieColour = "#ff0707";

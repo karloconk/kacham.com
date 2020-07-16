@@ -13,8 +13,9 @@
                 <td class="tdl">
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item" *ngFor="let ss of appimg" [ngClass]="ss.includes('1.png') ? 'active' : 'summ'">
-                        <img class="d-block w-100" src={{ss}}  >
+                      <div class="carousel-item" *ngFor="let ss of appimg"
+                        [ngClass]="ss.includes('1.png') ? 'active' : 'summ'">
+                        <img class="d-block w-100 roundedCRD" src={{ss}}>
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -29,6 +30,7 @@
                 </td>
                 <td class="tdr">
                   <mat-card [ngClass]="nightMode ? 'innercard2' : 'innercard'" [class.mat-elevation-z0]="true">
+                    <br>
                     <br>
 
                     <div *ngIf="nightMode; else lightmode">
@@ -51,9 +53,13 @@
                       <br>
                       <br>
                       <br>
-                      <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      <a href={{urlApple}} target="_blank">
+                        <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      </a>
                       <div *ngIf="availableGoogle">
-                        <img src="./../../assets/playstore.svg" height="80" width="220" />
+                        <a href={{urlGoogle}} target="_blank">
+                          <img src="./../../assets/playstore.svg" height="80" width="220" />
+                        </a>
                       </div>
                     </div>
 
@@ -77,9 +83,13 @@
                       <br>
                       <br>
 
-                      <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      <a href={{urlApple}} target="_blank">
+                        <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                      </a>
                       <div *ngIf="availableGoogle">
-                        <img src="./../../assets/playstore.svg" height="80" width="220" />
+                        <a href={{urlGoogle}} target="_blank">
+                          <img src="./../../assets/playstore.svg" height="80" width="220" />
+                        </a>
                       </div>
                     </ng-template>
                   </mat-card>
@@ -88,38 +98,41 @@
               </tr>
               <ng-template #yesmobile>
                 <tr height="100%">
-                  <td >
+                  <td>
+                    <br>
+
+                    <div class="lesswi" *ngIf="nightMode; else lightmode">
+                      <img src={{appico}} class="ultra">
                       <br>
-
-                      <div class="lesswi" *ngIf="nightMode; else lightmode">
-                        <img src={{appico}} class="ultra">
-                        <br>
-                        <br>
-                        <p class="ultraBig2">
-                          {{appTitle}}
-                        </p>
-                        <br>
-                        <br>
-                        <h1 mat-dialog-title class="whitetext">
-                          {{appSub}}
-                        </h1>
-                        <br>
-                        <h2 mat-dialog-title class="whitetext">
-                          {{appdesc}}
-                        </h2>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                      <br>
+                      <p class="ultraBig2">
+                        {{appTitle}}
+                      </p>
+                      <br>
+                      <br>
+                      <h1 mat-dialog-title class="whitetext">
+                        {{appSub}}
+                      </h1>
+                      <br>
+                      <h2 mat-dialog-title class="whitetext">
+                        {{appdesc}}
+                      </h2>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <a href={{urlApple}} target="_blank">
                         <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
-                        <div *ngIf="availableGoogle">
+                      </a>
+                      <div *ngIf="availableGoogle">
+                        <a href={{urlGoogle}} target="_blank">
                           <img src="./../../assets/playstore.svg" height="80" width="220" />
-                          <br>
-                        </div>
+                        </a> <br>
                       </div>
+                    </div>
 
-                      <ng-template #lightmode>
-                        <div class="lesswi">
+                    <ng-template #lightmode>
+                      <div class="lesswi">
 
                         <img src={{appico}} class="ultra">
                         <br>
@@ -141,13 +154,17 @@
                         <br>
                         <br>
 
-                        <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                        <a href={{urlApple}} target="_blank">
+                          <img *ngIf="availableApple" src="./../../assets/appstore.svg" height="80" width="220" />
+                        </a>
                         <div *ngIf="availableGoogle">
-                          <img src="./../../assets/playstore.svg" height="80" width="220" />
+                          <a href={{urlGoogle}} target="_blank">
+                            <img src="./../../assets/playstore.svg" height="80" width="220" />
+                          </a>
                         </div>
                       </div>
 
-                      </ng-template>
+                    </ng-template>
                   </td>
                 </tr>
               </ng-template>
