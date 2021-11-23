@@ -1,6 +1,6 @@
-# Kachamcom
+# kacham.com
 
-This project is for the website for kacham, a game making studio between Samantha and Karlo
+This project is the website for kacham, a game making team.
 
 ## Development server
 
